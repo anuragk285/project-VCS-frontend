@@ -1,0 +1,164 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* =========================================================================
+   Vinayaka Cloth Store: theme tokens
+   Light theme only. Heritage Navy and Gold on Ivory Linen.
+   RULE FOR THE TEAM: never write a colour by hand (no #1F2A44, no
+   bg-blue-500, no text-[#8A6A1F]). Use the names below, for example
+   text-primary, bg-card, border-border, text-gold-deep.
+   To change the look of the whole app, change the values in :root only.
+   ========================================================================= */
+
+:root {
+  /* Surfaces */
+  --background: #FAF6EE;            /* Ivory Linen: page background */
+  --foreground: #1C1C1C;            /* Charcoal Ink: body text */
+  --card: #FFFFFF;                  /* cards, forms, tables, panels */
+  --card-foreground: #1C1C1C;
+  --popover: #FFFFFF;               /* dropdowns, dialogs */
+  --popover-foreground: #1C1C1C;
+
+  /* Brand */
+  --primary: #1F2A44;               /* Heritage Navy: headings, prices, main buttons */
+  --primary-foreground: #FFFFFF;    /* text on navy */
+  --secondary: #F1EBDD;             /* Sand: soft sections, selected chips, table headers */
+  --secondary-foreground: #1F2A44;
+  --muted: #F1EBDD;                 /* quiet backgrounds */
+  --muted-foreground: #5F5B54;      /* Warm Grey: captions, units, hints */
+  --accent: #F1EBDD;                /* hover background in menus and lists */
+  --accent-foreground: #1F2A44;
+
+  /* Premium gold (our own tokens) */
+  --gold: #B8933F;                  /* Antique Gold: rules, active tab, "Next up" border. NOT for small text */
+  --gold-foreground: #1F2A44;       /* text placed on a gold background */
+  --gold-deep: #8A6A1F;             /* Deep Gold: small gold labels and links, readable */
+
+  /* Status (our own tokens) */
+  --success: #2E7D4F;               /* in stock, accepted, ready */
+  --success-foreground: #FFFFFF;
+  --warning: #B7791F;               /* low stock, at risk (icons, borders) */
+  --warning-foreground: #8A5A00;    /* amber TEXT */
+  --destructive: #B3261E;           /* reject, cancel, errors */
+  --destructive-foreground: #FFFFFF;
+
+  /* Lines and focus */
+  --border: #DDD3BF;                /* Warm Hairline */
+  --input: #DDD3BF;
+  --ring: #B8933F;                  /* focus ring: gold */
+
+  /* 3D studio sky */
+  --sky-top: #CFE4F5;
+  --sky-mid: #E6F1FA;
+  --sky-bottom: #F2F8FD;
+
+  /* Charts (admin): navy, gold, green, slate, amber */
+  --chart-1: #1F2A44;
+  --chart-2: #B8933F;
+  --chart-3: #2E7D4F;
+  --chart-4: #5B6B8C;
+  --chart-5: #B7791F;
+
+  /* Merchant and admin sidebar */
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #1C1C1C;
+  --sidebar-primary: #1F2A44;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F1EBDD;
+  --sidebar-accent-foreground: #1F2A44;
+  --sidebar-border: #DDD3BF;
+  --sidebar-ring: #B8933F;
+
+  /* Shape: 8 px controls, 12 px cards */
+  --radius: 0.5rem;
+}
+
+/* Makes the names above available as Tailwind classes */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-gold-deep: var(--gold-deep);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sky-top: var(--sky-top);
+  --color-sky-mid: var(--sky-mid);
+  --color-sky-bottom: var(--sky-bottom);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Fonts: font-sans for text, font-serif for headings and the shop name */
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 16px;               /* many customers are older: never go below 16 px for body text */
+    line-height: 1.5;
+  }
+  h1, h2, h3 {
+    @apply font-serif font-semibold text-primary;
+  }
+  h1 { font-size: 1.75rem; line-height: 1.25; }
+  h2 { font-size: 1.25rem; line-height: 1.25; }
+  h3 { font-size: 1.125rem; line-height: 1.3; }
+}
+
+/* Small uppercase gold label used above sections ("TOUCH & FEEL", "FILTERS") */
+@utility eyebrow {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-deep);
+}
+
+/* Light sky gradient for the 3D viewport */
+@utility bg-studio-sky {
+  background-image: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 70%, var(--sky-bottom) 100%);
+}

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "@fontsource-variable/cormorant-garamond";
 
 /* =========================================================================
    Vinayaka Cloth Store: theme tokens
@@ -26,7 +27,7 @@
   --secondary: #F1EBDD;             /* Sand: soft sections, selected chips, table headers */
   --secondary-foreground: #1F2A44;
   --muted: #F1EBDD;                 /* quiet backgrounds */
-  --muted-foreground: #5F5B54;      /* Warm Grey: captions, units, hints */
+  --muted-foreground: #7B8074;      /* Warm Grey: captions, units, hints */
   --accent: #F1EBDD;                /* hover background in menus and lists */
   --accent-foreground: #1F2A44;
 
@@ -44,7 +45,7 @@
   --destructive-foreground: #FFFFFF;
 
   /* Lines and focus */
-  --border: #DDD3BF;                /* Warm Hairline */
+  --border: #D7C49A;                /* Warm Hairline */
   --input: #DDD3BF;
   --ring: #B8933F;                  /* focus ring: gold */
 
@@ -126,7 +127,7 @@
 
   /* Fonts: font-sans for text, font-serif for headings and the shop name */
   --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
-  --font-serif: "Playfair Display", Georgia, serif;
+  --font-serif: "Cormorant Garamond Variable", Georgia, serif;
 }
 
 @layer base {

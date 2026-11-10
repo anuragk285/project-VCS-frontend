@@ -105,7 +105,7 @@ export default function Signin({ changePage }) {
                     </Button>
                     <Button 
                         type="button" 
-                        className='bg-white text-sm hover:bg-white text-muted-foreground hover:cursor-pointer' 
+                        className='bg-primary-foreground text-sm hover:bg-primary-foreground text-muted-foreground hover:cursor-pointer' 
                         onClick={goToSignupPage}
                     >
                         New Here ? <span className="text-gold-deep ml-1">Create Account</span>

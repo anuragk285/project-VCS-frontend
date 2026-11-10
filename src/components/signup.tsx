@@ -105,7 +105,7 @@ export default function Signup({ changePage }) {
 
                 <div className="flex flex-col gap-y-4 mt-4">
                     <Button type="submit" className='bg-gold-deep py-6 hover:cursor-pointer'>Sign up</Button>
-                    <Button type="button" className='bg-white text-sm hover:bg-white text-muted-foreground hover:cursor-pointer font-normal' onClick={goToSigninPage}>
+                    <Button type="button" className='bg-primary-foreground text-sm hover:bg-primary-foreground text-muted-foreground hover:cursor-pointer font-normal' onClick={goToSigninPage}>
                         Already have an account ? <span className="text-gold-deep ml-1">Sign in</span>
                     </Button>
                 </div>

@@ -15,7 +15,7 @@ export default function Login() {
       <div className="border rounded-3xl grid grid-cols-2 max-w-[80vw] h-[80vh] shadow-2xl overflow-y-hidden">
         <div className="fashion-model col-span-1 relative h-full">
           <div className="absolute top-8 left-10">
-            <h3 className=" text-white font-serif text-2xl">Vinayaka Cloth Store</h3>
+            <h3 className=" text-primary-foreground font-serif text-2xl">Vinayaka Cloth Store</h3>
             <p className="text-muted text-[10px] tracking-widest">SHIVANAGAR, WARANGAL</p>
           </div>
           <img src={fashionModel} alt="image of a fashion model wearing classic formal outfit." className=' inset-0 h-full w-full object-cover'/>
@@ -24,10 +24,10 @@ export default function Login() {
             <p>Pick your outfit matching your skintone.</p>
           </div>
         </div>
-        <div className='col-span-1 bg-white px-14 py-5 flex flex-col gap-y-8 overflow-y-scroll'>
+        <div className='col-span-1 bg-primary-foreground px-14 py-5 flex flex-col gap-y-8 overflow-y-scroll'>
           <div className="grid grid-cols-2"> 
-            <Button className={cn("col-span-1 bg-white rounded-none border-2 text-muted-foreground hover:bg-white cursor-pointer", page === "signin" ? "border-b-gold-deep text-gold-deep" : "")} onClick={() => changePage("signin")}>Sign in</Button>
-            <Button className={cn("col-span-1 bg-white rounded-none border-2 text-muted-foreground hover:bg-white cursor-pointer", page === "signup" ? "border-b-gold-deep text-gold-deep" : "")} onClick={() => changePage("signup")}>Sign up</Button>
+            <Button className={cn("col-span-1 bg-primary-foreground rounded-none border-2 text-muted-foreground hover:bg-primary-foreground cursor-pointer", page === "signin" ? "border-b-gold-deep text-gold-deep" : "")} onClick={() => changePage("signin")}>Sign in</Button>
+            <Button className={cn("col-span-1 bg-primary-foreground rounded-none border-2 text-muted-foreground hover:bg-primary-foreground cursor-pointer", page === "signup" ? "border-b-gold-deep text-gold-deep" : "")} onClick={() => changePage("signup")}>Sign up</Button>
           </div>
           <div className="col-span-1 flex-1 overflow-y-auto">
             {page === "signin" && <Signin changePage={changePage}></Signin>}

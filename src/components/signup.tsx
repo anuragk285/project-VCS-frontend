@@ -17,7 +17,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { Eye, EyeOff } from 'lucide-react'
 import { signupSchema, signupDefaults, type SignupValues, toRegisterInput } from '@/features/auth/signupSchema'
 
-export default function Signup({ changePage }) {
+export default function Signup({ changePage }: { changePage: (page: string) => void }) {
     const signUp = useSignUp()
     const navigate = useNavigate()
     const from = (useLocation().state as { from?: string } | null)?.from

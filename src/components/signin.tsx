@@ -18,7 +18,7 @@ import {
     FieldSet,
 } from "@/components/ui/field"
 
-export default function Signin({ changePage }) {
+export default function Signin({ changePage }: { changePage: (page: string) => void }) {
     const login = useLogin()
     const navigate = useNavigate()
     const from = (useLocation().state as { from?: string } | null)?.from

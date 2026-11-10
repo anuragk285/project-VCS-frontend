@@ -43,3 +43,18 @@ export function useLogout() {
     queryClient.clear() // forget everything that belonged to the old user
   }
 }
+
+export type RegisterInput = { name: string; phone?: string; email?: string; address?: string; password: string }
+
+export function useSignUp() {
+  return useMutation({
+    mutationFn: async (input: RegisterInput) => {
+      await api.post('/auth/register', input)
+      return api.post<TokenResponse>('/auth/login', {
+        identifier: input.phone || input.email || '',
+        password: input.password,
+      })
+    },
+    onSuccess: (data) => setToken(data.access_token),
+  })
+}

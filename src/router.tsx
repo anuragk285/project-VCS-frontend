@@ -5,6 +5,7 @@ import RequireRole from '@/auth/RequireRole'
 import { queryClient } from '@/lib/queryClient'
 import AreaPlaceholder from '@/pages/AreaPlaceholder'
 import Login from '@/pages/Login'
+import ShowInventory from './pages/inventoryPage'
 
 export const router = createBrowserRouter([
   // Login page. Someone already signed in is sent to their own area.
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
   // The public shop: signed-out visitors and customers may look. A merchant who opens it is sent to /merchant.
   {
     element: <RequireRole roles={['customer']} allowAnonymous />,
-    children: [{ path: '/', element: <AreaPlaceholder title="Vinayaka Cloth Store" /> }],
+    children: [{ path: '/', element: <ShowInventory/> }],
   },
 
   // Customer pages that need a sign-in.

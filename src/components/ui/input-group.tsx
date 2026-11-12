@@ -149,8 +149,8 @@ function InputGroupTextarea({
 
 function InputGroupInlineStart() {
   return (
-    <Field className="w-full">
-      <InputGroup className="py-6 px-2">
+    <Field className="ps-4">
+      <InputGroup className="py-6 md:px-2">
         <InputGroupInput id="inline-start-input" placeholder="Search for lenin, cotton, colours..." />
         <InputGroupAddon align="inline-start">
           <SearchIcon className="text-primary" />

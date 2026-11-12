@@ -2,6 +2,7 @@ import { User } from 'lucide-react'
 import { Link } from 'react-router'
 import { homeFor } from '@/auth/roles'
 import { useAuth } from '@/auth/useAuth'
+import { useLogout } from '@/api/auth'
 
 function initialOf(name: string | null | undefined): string | null {
   const first = name?.trim().charAt(0) ?? ''
@@ -10,6 +11,7 @@ function initialOf(name: string | null | undefined): string | null {
 
 export default function UserAvatar() {
   const { user, isLoading } = useAuth()
+  const logout = useLogout()
   const circle = 'flex h-11 w-11 items-center justify-center rounded-full'
 
   if (!user) {
@@ -26,6 +28,7 @@ export default function UserAvatar() {
     <Link
       to={homeFor(user.role)}
       aria-label={`Account of ${user.profile?.name ?? 'signed in user'}`}
+      onClick={logout}
       className={`${circle} bg-primary text-base font-semibold text-primary-foreground`}
     >
       {letter ?? <User size={22} aria-hidden />}

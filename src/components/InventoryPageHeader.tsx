@@ -19,7 +19,7 @@ export default function InventoryPageHeader(){
     const fabricNavigationButtonClass = (fabric: string) => {
         return cn("bg-primary-foreground text-primary hover:bg-background border-2 rounded-none cursor-pointer", selectFabric === fabric ? 'border-b-gold-deep' : 'text-muted-foreground')
     }
-    const cartItemsCount = 0; // later need to replace this with actual cart count
+    const cartItemsCount = 0; 
     return (
         <div className="bg-primary-foreground">
             <div className="flex md:grid md:grid-cols-12 justify-between items-center py-4 px-2 md:px-4">

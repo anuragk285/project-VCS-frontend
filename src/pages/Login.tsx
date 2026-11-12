@@ -16,7 +16,7 @@ function ResponsiveImage(){
 }
 
 export default function Login() {
-  const [page, setPage] = useState("signup")
+  const [page, setPage] = useState("signin")
   const changePage = (toPage: string) => {
     setPage(toPage)
   }
